@@ -1,0 +1,42 @@
+Source: https://luminatedata.com/careers/?gh_jid=4381249005
+
+Machine Learning Engineer
+France (Remote)
+Are you an entertainment news junkie? Do you thrill your friends with tales torn from famous and obscure sources about artists and performers of every ilk? Are you a bit of a data-head who’s a little obsessed with entertainment charts, ranks, lists and stats? Do you knowingly smile to yourself as you watch a story’s blow-up path, from the feeds to the web to TV, all fueled by the public’s fascination with all things entertainment? And do you have an eye for fact-based stories and an understanding of the role data plays in their telling? If so, we'd like to talk! 
+
+Luminate is the preeminent entertainment data and insights company, unlocking access to the most essential, objective, and trustworthy data compiled from thousands of verified data sources. The beneficiary of industry consolidation, Luminate now houses what was once Nielsen Music, BDS Radio, SoundScan, Music Connect, Alpha Data and Variety Business Intelligence.
+
+We are looking for an experienced Machine Learning Engineer to lead and execute our AI strategy. In this role, you will play a key role in designing and optimizing machine learning operations to support the development of our next-generation features. These features include accurate data matching, entity disambiguation, data enrichment, human interaction, and anomaly detection. This is a unique opportunity to shape the technical direction of a cutting-edge AI project with a global reach.
+
+The is a remote-work position based in France.
+
+Key Deliverables
+
+You will contribute to a series of high-value features for the company, including:
+
+Entity Matching (artists, recordings, works) using internal data: develop and store vector embeddings, establish a training pipeline, and conduct evaluations.
+Data Extraction from internal and external unstructured or semi-structured sources to enrich, qualify, or improve the reliability of our reference data.
+Chatbot Development leveraging retrieval-augmented generation (RAG) on datasets built using our in-house Neo4j graph, Google BigQuery, and external unstructured data.
+Automated Anomaly Detection to identify unreliable data that could impact artist remuneration. While some data is manually flagged as inconsistent, much remains to be uncovered through automation.
+Required skills and experience
+
+5+ years in ML engineering or MLOps, with a strong focus on NLP and large-scale model deployment.
+Proven ability to implement and maintain production ML systems using Python or Scala, along with libraries such as TensorFlow or PyTorch.
+Experience in designing and deploying scalable solutions integrated into cloud platforms, particularly Google Cloud Platform (GCP).
+Expertise in uncovering patterns in text data and developing advanced text analysis techniques.
+Fluency in English is essential.
+Nice-to-Have Skills and Experience
+
+Experience in building Generative AI models and working with Large Language Models (LLMs).
+Proficiency in creating and utilizing graph-based embeddings.
+Knowledge of Google Cloud Platform (GCP).
+Familiarity with music information retrieval (MIR), music metadata, or cultural analytics is a strong advantage.
+The Job
+
+Full-time French CDI (permanent employment contract).
+Remote work, based in France.
+Join a team of passionate professionals with years of experience in the music industry, metadata, publishing, recording, and global identifiers.
+Work with prestigious clients across the industry, including major music companies, labels, publishers, and metadata providers.
+More About Us: Luminate has incredible 30 year history that has made us who we are today. We power the Billboard Charts, but we also inform the entire music industry with exclusive research, data and insights. We serve the television and film industry, providing deep meta-data on every major production and title.
+
+Luminate is an equal opportunity employer, and all qualified applicants will receive consideration for employment without regard to race, color, religion, age, sex, national origin, disability status, genetics, protected veteran status, sexual orientation, gender identity or expression, or any other characteristic protected by federal, state or local laws.
