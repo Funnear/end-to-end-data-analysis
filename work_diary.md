@@ -67,3 +67,26 @@ kaggle datasets download -d mathurinache/1000000-bandcamp-sales; \
 kaggle datasets download -d bvitos/electronic-music-features-202101-beatporttop100
 ```
 
+#### using custom python code in notebooks
+
+For troubleshooting. Exucute this Python code from a root directory of the project:
+```python
+import sys
+import os
+
+sys.path.append(os.path.abspath(".")) 
+print("sys.path:", sys.path)
+```
+
+TODO: add this later to README.md:
+``` bash
+pip install -e .
+```
+the path should be to the folder that contains setup.py
+
+setup.py must list folders containing `__init__.py` files.
+
+Contents of package folders can be used in Python and Jupyter files:
+```python
+from src import eda
+```
