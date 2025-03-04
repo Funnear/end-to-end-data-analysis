@@ -60,8 +60,10 @@ pip install kaggle; \
 kaggle datasets list -s my_keyword
 ```
 
-This way I have found and downloaded an extra data set that might be useful:
+This way I have found and downloaded an extra data sets that might be useful:
 ```bash
-kaggle datasets download -d mrmorj/dataset-of-songs-in-spotify
+kaggle datasets download -d mrmorj/dataset-of-songs-in-spotify; \
+kaggle datasets download -d mathurinache/1000000-bandcamp-sales; \
+kaggle datasets download -d bvitos/electronic-music-features-202101-beatporttop100
 ```
 
