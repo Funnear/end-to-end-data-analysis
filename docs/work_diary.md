@@ -90,3 +90,8 @@ Contents of package folders can be used in Python and Jupyter files:
 ```python
 from src import eda
 ```
+
+#### Dataset pack for data frame maintenance
+
+Created module src/datasets to automate reading and writing dataframes to/from files and keeping them in a dictionary for repeated actions.
+It required usage of Python classes, `os` module for generating paths, and stream reading / writing for files.
