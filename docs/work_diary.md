@@ -127,7 +127,7 @@ project_pack.add_dataset(dataset2)
 dataset3 = datasets.Dataset('df_discogs_releases', datasets_files[2])
 project_pack.add_dataset(dataset3)
 ```
-- this code runs for ??? seconds for this project on developer's workstation.
+- this code runs for 14.4 seconds for this project on developer's workstation.
 
 2. Regular usage
 
@@ -165,7 +165,8 @@ It is useful when I have several notebooks for different project stages:
 ```python
 project_pack = datasets.DatasetPack(restore=True)
 ```
-- this code runs for 3,5 seconds for this project on developer's workstation.
+- before cleanup, this code runs for 2.5 seconds for this project on developer's workstation.
+- after cleanup, this code runs for ??? seconds for this project on developer's workstation.
 
 #### Using logger for debugging purposes
 

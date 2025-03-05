@@ -1,5 +1,5 @@
 {
-    "df_bandcamp_sales": "df_bandcamp_sales",
-    "df_discogs_artists": "df_discogs_artists",
-    "df_discogs_releases": "df_discogs_releases"
+    "df_bandcamp_sales": "1000000-bandcamp-sales.csv",
+    "df_discogs_artists": "discogs_20250101_artists.csv",
+    "df_discogs_releases": "release_data.csv"
 }

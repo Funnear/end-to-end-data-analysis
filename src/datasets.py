@@ -63,7 +63,7 @@ class DatasetPack:
     def backup_pack(self):
         backup_dictionary = dict()
         for key, value in self.dictionary.items():
-            backup_dictionary[key] = value.source
+            backup_dictionary[key] = value.source.replace(f"{DATASETS_PATH}/", "")
 
         with open(PACK_BACKUP, "w") as json_file:
             json.dump(backup_dictionary, json_file, indent=4)
@@ -78,5 +78,5 @@ class DatasetPack:
         for key, value in self.dictionary.items():
             self.dictionary[key] = Dataset(key)
 
-        
-
+    def labels(self):
+        pass
