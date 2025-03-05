@@ -95,3 +95,94 @@ from src import eda
 
 Created module src/datasets to automate reading and writing dataframes to/from files and keeping them in a dictionary for repeated actions.
 It required usage of Python classes, `os` module for generating paths, and stream reading / writing for files.
+
+##### How it works
+
+0. :warning: [ Under construction] Import data sets from Kaggle directly and automatically and store as csv files locally, without using github repo for this.
+
+1. Import the data sets from csv files for the first time.
+
+To quickly get file names of datasets in the code copy output from terminal:
+```bash
+cd datasets; ls -1
+```
+And then use multicoursor editing feature.
+
+```python
+from src import eda, datasets
+
+datasets_files = [
+'1000000-bandcamp-sales.csv', 
+'discogs_20250101_artists.csv', 
+'release_data.csv']
+
+project_pack = datasets.DatasetPack()
+
+dataset1 = datasets.Dataset('df_bandcamp_sales', datasets_files[0])
+project_pack.add_dataset(dataset1)
+
+dataset2 = datasets.Dataset('df_discogs_artists', datasets_files[1])
+project_pack.add_dataset(dataset2)
+
+dataset3 = datasets.Dataset('df_discogs_releases', datasets_files[2])
+project_pack.add_dataset(dataset3)
+```
+- this code runs for ??? seconds for this project on developer's workstation.
+
+2. Regular usage
+
+Now if I want to work with my dataframe inside the notebook, not from the python modules, I can do this:
+```bash
+df_bandcamp_sales = project_pack.dictionary['df_bandcamp_sales'].dataframe.copy()
+```
+
+But ideally I want to cycle throught the dataset pack and repeat the same code for every dataset:
+```python
+for label, dataset in project_pack.dictionary.items():
+    print(f"================= {label} =================")
+    dataset.dataframe.info()
+    print()
+```
+
+3. Backup
+
+3.1 Save all dataframes to pickles
+
+```python
+for _, dataset in project_pack.dictionary.items():
+    dataset.backup()
+```
+
+3.2 Save pack information as json file
+```python
+project_pack.backup_pack()
+```
+
+4. Restore
+
+Next time I open a Jupyter notebook I can pick up from where I left off without running all code again.
+It is useful when I have several notebooks for different project stages:
+```python
+project_pack = datasets.DatasetPack(restore=True)
+```
+- this code runs for 3,5 seconds for this project on developer's workstation.
+
+#### Using logger for debugging purposes
+
+Put this code in Jupyter notebook somewhere at the top:
+```python
+import logging
+logging.getLogger().setLevel(logging.DEBUG)
+```
+
+Other levels:
+- DEBUG - what developers look at
+- INFO - extra information on what's happening
+- WARNING - this won't stop your code from running but you're doing something slightly off
+- EXCEPTION / ERROR - this will stop your code but you'll get extra info on the error
+
+Put this code in Jupyter notebook or Python script:
+```python
+logging.debug(f"The age ({age}) is between 24 and 34")
+```
+
