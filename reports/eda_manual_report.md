@@ -94,7 +94,7 @@ Combination: ('p', 'p') | Merch or Bundle with CD / Vinyl | parse 'item_descript
 -- 'digital': for digital album and single track sales
 -- 'CD': for hard media music sales, type CD
 -- 'Vinyl': for hard media music sales, type CD
--- 'Cassette': surprise category, discovered accidentally in item descriptions
+-- 'Tape': surprise category 'Cassette', discovered accidentally in item descriptions, renamed into 'Tape' for compatibility
 -- 'CD or Vinyl': for physical album sales (the ('p', 'a') case)
 
 For finding Vinyl in item description the following cases are considered:
@@ -117,7 +117,7 @@ N | media_type | count
 1 | Vinyl | 107775
 2 | CD | 39647
 3 | CD or Vinyl | 23142
-4 | Cassette | 22715
+4 | Tape | 22715
 
 Donut chart has been created: see img/bandcamp_media_types.png
 
@@ -158,6 +158,7 @@ As we see from the auto-EDA output:
 Non-Music rows were dropped.
 
 N | genre | count
+--- | --- | ---
 0 | Rock | 4414291
 1 | Electronic | 3491910
 2 | Pop | 2546269
@@ -256,7 +257,23 @@ Lesser-known or short-lived formats:
 	•	Sabamobil / Cartrivision → Rare cartridge-based formats.
 	•	Revere Magnetic Stereo Tape Cartridge → Obscure tape format.
 
+### changes in data frame:
+- new column: 'media_type' with values:
+-- 'digital': for digital format sold as 'File'
+-- 'CD': for all sorts of disks with music
+-- 'Vinyl': for all sorts of vynils
+-- 'Tape': cassette-like formats
 
+# Frequency table for df_discogs_releases ['media_type']
 
+N | media_type | count
+-- | --
+0 | Vinyl | 8088615
+1 | CD | 6011029
+2 | digital | 1573118
+3 | Tape | 1306035
+4 | other | 180974
 
+'other' rows dropped.
 
+Donut chart has been created: see img/discogs_media_types.png
