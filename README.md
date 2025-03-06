@@ -11,7 +11,7 @@ Get insights to the differences and similarities in customer choices for music p
   - [Manual EDA report, md](reports/eda_manual_report.md)
 
 ## Methodology
-- Exploraroty Data Analysis (EDA), including:
+- Exploratory Data Analysis (EDA), including:
   - Data quality analysis and cleanup
   - Identifying numeric and categorical data columns
   - Identifying discrete and continuous data
@@ -27,7 +27,7 @@ Get insights to the differences and similarities in customer choices for music p
 2. Vynil sales are higher than CD sales everywhere, but on Discogs they are very close
 3. The most popular genres on Discogs are Rock and Electronic music
 
-### Frequency disgrams
+### Frequency diagrams
 - [Bandcamp media types distribution, donut chart ](img/bandcamp_media_types.png)
 - [Discogs media types distribution, donut chart ](img/discogs_media_types.png)
 - [Discogs genre distribution, donut chart ](img/discogs_media_types.png)
