@@ -3,7 +3,6 @@
 datasets/discogs_20250101_artists.csv
 datasets/release_data.csv
 datasets/1000000-bandcamp-sales.csv
-
 ## data frame backups
 *.pkl
 

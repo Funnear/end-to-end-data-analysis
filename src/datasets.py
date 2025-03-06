@@ -61,22 +61,38 @@ class DatasetPack:
         self.dictionary[dataset.label] = dataset
 
     def backup_pack(self):
-        backup_dictionary = dict()
-        for key, value in self.dictionary.items():
-            backup_dictionary[key] = value.source.replace(f"{DATASETS_PATH}/", "")
+        backup_dictionary = {
+            key: value.source.replace(f"{DATASETS_PATH}/", "") for key, value in self.dictionary.items()
+        }
+
+        # Check if the file already exists and compare contents
+        if os.path.exists(PACK_BACKUP):
+            with open(PACK_BACKUP, "r") as json_file:
+                existing_data = json.load(json_file)
+                if existing_data == backup_dictionary:
+                    logging.info(f"Backup not changed, skipping write: {PACK_BACKUP}")
+                    return
 
         with open(PACK_BACKUP, "w") as json_file:
             json.dump(backup_dictionary, json_file, indent=4)
 
-        logging.info(f"Backup file is created: {PACK_BACKUP}")
+        logging.info(f"Backup file is updated: {PACK_BACKUP}")
 
     def restore_pack(self):
         logging.info(f"Restoring backup: {PACK_BACKUP}")
-        with open(PACK_BACKUP, "r") as json_file:
-            self.dictionary = json.load(json_file)
-        
-        for key, value in self.dictionary.items():
-            self.dictionary[key] = Dataset(key)
+        if not os.path.exists(PACK_BACKUP):
+            logging.error(f"Backup file not found: {PACK_BACKUP}")
+            return
 
-    def labels(self):
-        pass
+        with open(PACK_BACKUP, "r") as json_file:
+            backup_dictionary = json.load(json_file)
+
+        self.dictionary = {key: Dataset(key) for key in backup_dictionary}
+
+        logging.info(f"Backup restored successfully from {PACK_BACKUP}")
+
+    def get_labels(self) -> list:
+        return list(self.dictionary.keys())
+    
+    def get_project_root(self) -> str:
+        return PROJECT_ROOT
