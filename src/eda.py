@@ -61,6 +61,7 @@ class Auto_EDA:
         pass
 
     def print_eda_report(self):
+        # TODO: save the report as a text file automatically.
         self.numerical_columns = self.get_numerical_columns()
         self.categorical_columns = self.get_categorical_columns()
 
