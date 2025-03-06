@@ -37,6 +37,11 @@ pip install --upgrade pip; \
 pip install -r requirements.txt
 ```
 
+Install internal package with project modules:
+```bash
+pip install -e .
+```
+
 4. Configure using the same environment for Jupyter Notebooks
 
 After running this comand in terminal:
