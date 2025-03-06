@@ -9,7 +9,7 @@ DATASETS_PATH = f'{PROJECT_ROOT}/datasets'
 PACK_BACKUP = f'{DATASETS_PATH}/_dataset_pack_{PROJECT_NAME}.json'
 
 class Dataset:
-    def __init__(self, label: str, source=None):
+    def __init__(self, label: str, source: str, restore=False):
         """
         Only for calling from notebooks or modules.
         Only local relative paths to csv files are supported.
@@ -23,21 +23,23 @@ class Dataset:
         df1 = dataset1.restore().copy()
 
         TODO:
-        - differ url from local path
-        - support JSON, etc.
+        - parse source to:
+        -- differ url from local file path
+        -- support JSON, etc.
         - download from Kaggle using API
         """
 
         self.label = label
         self.path_pkl = f'{DATASETS_PATH}/{self.label}.pkl'
+        self.source = f'{DATASETS_PATH}/{source}'
 
-        if source: 
-            self.source = f'{DATASETS_PATH}/{source}'
-            self.dataframe = pd.read_csv(self.source)
+        if restore:
+            logging.info(f"Restoring dataframe from backup: {self.path_pkl}")
+            self.restore() 
         else:
-            logging.info(f"No source provided, restoring from backup: {self.path_pkl}")
-            self.source = None
-            self.restore()
+            logging.info(f"Creating data frame from csv: {self.source}")
+            self.dataframe = pd.read_csv(self.source)
+            
 
     def backup(self):
         self.dataframe.to_pickle(self.path_pkl)
@@ -87,7 +89,7 @@ class DatasetPack:
         with open(PACK_BACKUP, "r") as json_file:
             backup_dictionary = json.load(json_file)
 
-        self.dictionary = {key: Dataset(key) for key in backup_dictionary}
+        self.dictionary = {key: Dataset(key, value, restore=True) for key, value in backup_dictionary.items()}
 
         logging.info(f"Backup restored successfully from {PACK_BACKUP}")
 

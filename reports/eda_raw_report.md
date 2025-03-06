@@ -1,13 +1,12 @@
 ================= df_bandcamp_sales =================
-df_bandcamp_sales has shape (1000000, 15)
+df_bandcamp_sales has shape (1000000, 12)
 
-df_bandcamp_sales has numerical data in columns: ['utc_date', 'art_id', 'releases', 'amount_paid_usd']
+df_bandcamp_sales has numerical data in columns: ['utc_date', 'art_id', 'amount_paid_usd']
 - Column "utc_date" has 999990 unique values.
 - Column "art_id" has 271430 unique values.
 - Column "amount_paid_usd" has 5866 unique values.
-- Column "releases" has 220 unique values.
 
-df_bandcamp_sales has categorical data in columns: ['_id', 'item_type', 'country_code', 'country', 'slug_type', 'item_description', 'url', 'artist_name', 'album_title', 'amount_over_fmt', 'item_slug']
+df_bandcamp_sales has categorical data in columns: ['_id', 'item_type', 'country_code', 'country', 'slug_type', 'item_description', 'url', 'artist_name', 'album_title']
 - Column "_id" has 1000000 unique values.
 - Column "item_type" has 4 unique values.
   -- Unique values are:
@@ -21,30 +20,20 @@ df_bandcamp_sales has categorical data in columns: ['_id', 'item_type', 'country
 - Column "url" has 374473 unique values.
 - Column "artist_name" has 159746 unique values.
 - Column "album_title" has 103697 unique values.
-- Column "amount_over_fmt" has 3084 unique values.
-- Column "item_slug" has 156 unique values.
 
 ================= df_discogs_artists =================
-df_discogs_artists has shape (9194907, 12)
+df_discogs_artists has shape (9194907, 4)
 
-df_discogs_artists has numerical data in columns: ['Unnamed: 0', 'aliases_name_id', 'artist_id', 'groups_name_id', 'members_name_id']
+df_discogs_artists has numerical data in columns: ['Unnamed: 0', 'artist_id']
 - Column "Unnamed: 0" has 9194907 unique values.
 - Column "artist_id" has 9194907 unique values.
-- Column "aliases_name_id" has 479617 unique values.
-- Column "members_name_id" has 450795 unique values.
-- Column "groups_name_id" has 449588 unique values.
 
-df_discogs_artists has categorical data in columns: ['aliases_name', 'artist_data_quality', 'artist_name', 'artist_realname', 'groups_name', 'members_name', 'namevariations_name']
-- Column "aliases_name" has 479615 unique values.
+df_discogs_artists has categorical data in columns: ['artist_data_quality', 'artist_name']
 - Column "artist_data_quality" has 6 unique values.
   -- Unique values are:
  ['Needs Vote' 'Correct' 'Needs Major Changes' 'Complete and Correct'
  'Needs Minor Changes' 'Entirely Incorrect']
 - Column "artist_name" has 9194896 unique values.
-- Column "artist_realname" has 541891 unique values.
-- Column "groups_name" has 449587 unique values.
-- Column "members_name" has 450795 unique values.
-- Column "namevariations_name" has 1582994 unique values.
 
 ================= df_discogs_releases =================
 df_discogs_releases has shape (17246710, 5)
